@@ -8,10 +8,11 @@ let config = {
   minZoom: 2,
   maxZoom: 24,
 };
-const zoom = 16;
-const lat = -6.662189;
-const lng = 111.469324;
+const zoom = 15;
+const lat = -6.67750;
+const lng = 111.44353;
 
+ 
 // calling map
 const map = L.map("map", config).setView([lat, lng], zoom);
 
@@ -78,7 +79,7 @@ function onEachFeature(feature, layer) {
 }
 
 // Load point features
-fetch('obyek-religi-olahan-pesisir-point.geojson')
+fetch('maritim-dan-pecinan-lasem-point-old.geojson')
   .then(res => res.json())
   .then(data => {
     // Sort features by Urutan
@@ -105,7 +106,7 @@ fetch('obyek-religi-olahan-pesisir-point.geojson')
   .catch(err => console.error(err));
 
 // Load route line
-fetch('obyek-religi-olahan-pesisir.geojson')
+fetch('maritim-dan-pecinan-lasem.geojson')
   .then(res => res.json())
   .then(data => {
     L.geoJSON(data, {
